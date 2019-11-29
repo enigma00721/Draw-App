@@ -140,16 +140,7 @@ namespace DrawWithCommandline
             addDrawingSizes();
             cboSize.Enabled = true;
         }
-        private void btnPolygon_click(object sender, EventArgs e)
-        {
-            active = "polygon";
-            removeAllBorderFromButtons();
-            btnPolygon.FlatAppearance.BorderSize = 1;
-            panelPaint.Cursor = Cursors.Default;
-            addDrawingSizes();
-            cboSize.Enabled = true;
-        }
-
+       
         private void setAllBorderColorForButtons()
         {
             btnPen.FlatAppearance.BorderColor = btnBorderColor;
@@ -157,7 +148,6 @@ namespace DrawWithCommandline
             btnRectangle.FlatAppearance.BorderColor = btnBorderColor;
             btnTriangle.FlatAppearance.BorderColor = btnBorderColor;
             btnCircle.FlatAppearance.BorderColor = btnBorderColor;
-            btnPolygon.FlatAppearance.BorderColor = btnBorderColor;
         }
 
         private void removeAllBorderFromButtons()
@@ -167,7 +157,6 @@ namespace DrawWithCommandline
             btnRectangle.FlatAppearance.BorderSize = 0;
             btnTriangle.FlatAppearance.BorderSize = 0;
             btnCircle.FlatAppearance.BorderSize = 0;
-            btnPolygon.FlatAppearance.BorderSize = 0;
         }
         private void panelPaint_MouseDown(object sender, MouseEventArgs e)
         {
@@ -236,28 +225,7 @@ namespace DrawWithCommandline
                 g.FillEllipse(myBrush, e.X - size / 2, e.Y - size / 2, size, size);
 
             }
-            else if (active.Equals("polygon"))
-            {
-                Pen myPen = new Pen(mainColor);
-                Point[] pnt = new Point[5];
-
-                pnt[0].X = mouseX;
-                pnt[0].Y = mouseY;
-
-                pnt[1].X = mouseX + size;
-                pnt[1].Y = mouseY;
-
-                pnt[2].X = mouseX + size + (size / 2);
-                pnt[2].Y = mouseY + size;
-
-                pnt[3].X = mouseX - (size / 2);
-                pnt[3].Y = mouseY + size;
-
-                pnt[4].X = mouseX;
-                pnt[4].Y = mouseY;
-                g.DrawPolygon(myPen, pnt);
-
-            }
+           
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -308,7 +276,7 @@ namespace DrawWithCommandline
                 validate = new Validation(txtCommand);
                 if (!validate.isSomethingInvalid)
                 {
-                    MessageBox.Show("Everything is working fine");
+                    /*MessageBox.Show("Everything is working fine");*/
                     loadCommand();
                 }
 
@@ -319,8 +287,8 @@ namespace DrawWithCommandline
         {
             if (!hasDrawOrMoveValue)
             {
-                mouseX = e.X;
-                mouseY = e.Y;
+                mouseX = e.X-50;
+                mouseY = e.Y-50;
             }
             if (moving && x != -1 && y != -1)
             {
@@ -363,6 +331,7 @@ namespace DrawWithCommandline
                         }
                         mouseX = int.Parse(parms[0]);
                         mouseY = int.Parse(parms[1]);
+
                         hasDrawOrMoveValue = true;
                     }
                     else
@@ -653,27 +622,7 @@ namespace DrawWithCommandline
                     }
                     DrawTriangle(Int32.Parse(parms[0]), Int32.Parse(parms[1]), Int32.Parse(parms[2]));
                 }
-                else if (firstWord.Equals("polygon"))
-                {
-                    String args = lineOfCommand.Substring(8, (lineOfCommand.Length - 8));
-                    String[] parms = args.Split(',');
-                    for (int i = 0; i < parms.Length; i++)
-                    {
-                        parms[i] = parms[i].Trim();
-                    }
-                    if (parms.Length == 8)
-                    {
-                        DrawPolygon(Int32.Parse(parms[0]), Int32.Parse(parms[1]), Int32.Parse(parms[2]), Int32.Parse(parms[3]),
-                            Int32.Parse(parms[4]), Int32.Parse(parms[5]), Int32.Parse(parms[6]), Int32.Parse(parms[7]));
-                    }
-                    else if (parms.Length == 10)
-                    {
-                        DrawPolygon(Int32.Parse(parms[0]), Int32.Parse(parms[1]), Int32.Parse(parms[2]), Int32.Parse(parms[3]),
-                            Int32.Parse(parms[4]), Int32.Parse(parms[5]), Int32.Parse(parms[6]), Int32.Parse(parms[7]),
-                            Int32.Parse(parms[8]), Int32.Parse(parms[9]));
-                    }
-
-                }
+               
 
             }
             else
@@ -941,11 +890,8 @@ namespace DrawWithCommandline
 
         private void DrawRectangle(int width, int height)
         {
-            this.Cursor = new Cursor(Cursor.Current.Handle);
-            int posX = Cursor.Position.X;
-            int posY = Cursor.Position.Y;
             Pen myPen = new Pen(mainColor);
-            g.DrawRectangle(myPen, posX, posY , width, height);
+            g.DrawRectangle(myPen, mouseX - radius, mouseY - radius, width, height);
         }
 
         private void DrawCircle(int radius)

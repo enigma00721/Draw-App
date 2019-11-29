@@ -42,7 +42,6 @@
             this.btnRun = new System.Windows.Forms.Button();
             this.txtCommand = new System.Windows.Forms.TextBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.btnPolygon = new System.Windows.Forms.Button();
             this.btnCircle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -220,7 +219,6 @@
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.BackColor = System.Drawing.Color.White;
-            this.splitContainer3.Panel1.Controls.Add(this.btnPolygon);
             this.splitContainer3.Panel1.Controls.Add(this.btnCircle);
             this.splitContainer3.Panel1.Controls.Add(this.label1);
             this.splitContainer3.Panel1.Controls.Add(this.btnClear);
@@ -238,26 +236,13 @@
             this.splitContainer3.SplitterDistance = 108;
             this.splitContainer3.TabIndex = 0;
             // 
-            // btnPolygon
-            // 
-            this.btnPolygon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPolygon.BackgroundImage")));
-            this.btnPolygon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPolygon.FlatAppearance.BorderSize = 0;
-            this.btnPolygon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPolygon.Location = new System.Drawing.Point(220, 3);
-            this.btnPolygon.Name = "btnPolygon";
-            this.btnPolygon.Size = new System.Drawing.Size(69, 50);
-            this.btnPolygon.TabIndex = 0;
-            this.btnPolygon.UseVisualStyleBackColor = true;
-            this.btnPolygon.Click += new System.EventHandler(this.btnPolygon_click);
-            // 
             // btnCircle
             // 
             this.btnCircle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCircle.BackgroundImage")));
             this.btnCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCircle.FlatAppearance.BorderSize = 0;
             this.btnCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCircle.Location = new System.Drawing.Point(160, 2);
+            this.btnCircle.Location = new System.Drawing.Point(162, 5);
             this.btnCircle.Name = "btnCircle";
             this.btnCircle.Size = new System.Drawing.Size(54, 58);
             this.btnCircle.TabIndex = 0;
@@ -301,7 +286,7 @@
             this.btnChooseColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnChooseColor.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnChooseColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseColor.Location = new System.Drawing.Point(313, 19);
+            this.btnChooseColor.Location = new System.Drawing.Point(291, 9);
             this.btnChooseColor.Name = "btnChooseColor";
             this.btnChooseColor.Size = new System.Drawing.Size(67, 62);
             this.btnChooseColor.TabIndex = 1;
@@ -314,7 +299,7 @@
             this.btnTriangle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTriangle.FlatAppearance.BorderSize = 0;
             this.btnTriangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTriangle.Location = new System.Drawing.Point(89, 3);
+            this.btnTriangle.Location = new System.Drawing.Point(89, 10);
             this.btnTriangle.Name = "btnTriangle";
             this.btnTriangle.Size = new System.Drawing.Size(67, 49);
             this.btnTriangle.TabIndex = 0;
@@ -327,7 +312,7 @@
             this.btnRectangle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRectangle.FlatAppearance.BorderSize = 0;
             this.btnRectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRectangle.Location = new System.Drawing.Point(36, 2);
+            this.btnRectangle.Location = new System.Drawing.Point(36, 9);
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.Size = new System.Drawing.Size(47, 51);
             this.btnRectangle.TabIndex = 0;
@@ -414,7 +399,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClearAll;
-        private System.Windows.Forms.Button btnPolygon;
     }
 }
 

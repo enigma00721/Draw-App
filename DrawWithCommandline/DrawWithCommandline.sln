@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawWithCommandline", "Draw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawTests", "DrawTests\DrawTests.csproj", "{FEE0F5D2-0705-4696-9E92-FF458637D878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawWithCommandlineTests", "DrawWithCommandlineTests\DrawWithCommandlineTests.csproj", "{F1AF1888-D7AA-4EC6-B8A0-5E093C8B6A11}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{FEE0F5D2-0705-4696-9E92-FF458637D878}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEE0F5D2-0705-4696-9E92-FF458637D878}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEE0F5D2-0705-4696-9E92-FF458637D878}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1AF1888-D7AA-4EC6-B8A0-5E093C8B6A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1AF1888-D7AA-4EC6-B8A0-5E093C8B6A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1AF1888-D7AA-4EC6-B8A0-5E093C8B6A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1AF1888-D7AA-4EC6-B8A0-5E093C8B6A11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
