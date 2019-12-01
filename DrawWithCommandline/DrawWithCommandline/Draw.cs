@@ -287,8 +287,8 @@ namespace DrawWithCommandline
         {
             if (!hasDrawOrMoveValue)
             {
-                mouseX = e.X-50;
-                mouseY = e.Y-50;
+                mouseX = e.Location.X-50;
+                mouseY = e.Location.Y-50;
             }
             if (moving && x != -1 && y != -1)
             {
@@ -891,7 +891,7 @@ namespace DrawWithCommandline
         private void DrawRectangle(int width, int height)
         {
             Pen myPen = new Pen(mainColor);
-            g.DrawRectangle(myPen, mouseX - radius, mouseY - radius, width, height);
+            g.DrawRectangle(myPen, mouseX - radius/3, mouseY - radius/4, width, height);
         }
 
         private void DrawCircle(int radius)
